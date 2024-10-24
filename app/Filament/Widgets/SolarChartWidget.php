@@ -6,11 +6,12 @@ use App\Models\Solar;
 use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
+use Illuminate\Support\Carbon;
 
 class SolarChartWidget extends ChartWidget
 {
     protected static ?string $heading = 'Arus';
-
+    protected int | string | array $columnSpan = 2;
     
     
     protected function getData(): array
@@ -30,7 +31,7 @@ class SolarChartWidget extends ChartWidget
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],
-            'labels' => $data->map(fn (TrendValue $value) => $value->date),
+            'labels' => $data->map(fn (TrendValue $value) => Carbon::parse($value->date)->format('H:i')),
         ];
     }
 
