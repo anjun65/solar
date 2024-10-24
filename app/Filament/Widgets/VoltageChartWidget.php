@@ -23,7 +23,7 @@ class VoltageChartWidget extends ChartWidget
                     end: now($timezone),
                 )
                 ->perMinute()
-                ->average('temperature');
+                ->average('voltage');
  
         return [
             'datasets' => [
