@@ -12,14 +12,18 @@ class SolarChartWidget extends ChartWidget
 {
     protected static ?string $heading = 'Arus';
     protected int | string | array $columnSpan = 2;
+
+    
     
     
     protected function getData(): array
     {
+        $timezone = 'Asia/Jakarta';
+        
         $data = Trend::model(Solar::class)
                 ->between(
-                    start: now()->subHour(),
-                    end: now(),
+                    start: now($timezone)->subHour(),
+                    end: now($timezone),
                 )
                 ->perMinute()
                 ->average('power');
