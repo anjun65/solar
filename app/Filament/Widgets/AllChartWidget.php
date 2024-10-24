@@ -33,25 +33,25 @@ class AllChartWidget extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Arus (A)',
+                    'label' => 'Current (A)',
                     'data' => $dataCurrent->map(fn (TrendValue $value) => $value->aggregate),
                     'borderColor' => 'rgba(75, 192, 192, 0.6)',
                     'backgroundColor' => 'rgba(75, 192, 192, 0.6)',
                 ],
                 [
-                    'label' => 'Daya (W)',
+                    'label' => 'Power (W)',
                     'data' => $dataPower->map(fn (TrendValue $value) => $value->aggregate),
                     'borderColor' => 'rgba(255, 99, 132, 0.6)',
                     'backgroundColor' => 'rgba(255, 99, 132, 0.6)',
                 ],
                 [
-                    'label' => 'Suhu (C)',
+                    'label' => 'Temoerature (C)',
                     'data' => $dataTemperature->map(fn (TrendValue $value) => $value->aggregate),
                     'borderColor' => 'rgba(255, 206, 86, 0.6)',
                     'backgroundColor' => 'rgba(255, 206, 86, 0.6)',
                 ],
                 [
-                    'label' => 'Tegangan (V)',
+                    'label' => 'Voltage (V)',
                     'data' => $dataVoltage->map(fn (TrendValue $value) => $value->aggregate),
                     'borderColor' => 'rgba(54, 162, 235, 0.6)',
                     'backgroundColor' => 'rgba(54, 162, 235, 0.6)',

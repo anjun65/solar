@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 class SolarChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'Daya (W)';
+    protected static ?string $heading = 'Power (W)';
     protected int | string | array $columnSpan = 2;
     
     protected function getData(): array
@@ -28,7 +28,7 @@ class SolarChartWidget extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Daya',
+                    'label' => 'Power (W)',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],

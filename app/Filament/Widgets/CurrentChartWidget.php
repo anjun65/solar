@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 class CurrentChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'Arus (A)';
+    protected static ?string $heading = 'Current (A)';
 
     protected int | string | array $columnSpan = 2;
     
@@ -29,7 +29,7 @@ class CurrentChartWidget extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Arus',
+                    'label' => 'Current (A)',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],

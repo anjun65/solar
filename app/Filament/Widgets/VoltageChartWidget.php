@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 class VoltageChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'Tegangan (V)';
+    protected static ?string $heading = 'Voltage (V)';
     protected int | string | array $columnSpan = 2;
     
     protected function getData(): array
@@ -28,7 +28,7 @@ class VoltageChartWidget extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Daya',
+                    'label' => 'Voltage (V)',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],

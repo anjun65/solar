@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 class TemperatureChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'Suhu (C)';
+    protected static ?string $heading = 'Temperature (C)';
     protected int | string | array $columnSpan = 2;
     
     protected function getData(): array
@@ -28,7 +28,7 @@ class TemperatureChartWidget extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Suhu',
+                    'label' => 'Temperature (C)',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],
