@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 class CurrentChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'Arus';
+    protected static ?string $heading = 'Arus (A)';
 
     protected int | string | array $columnSpan = 2;
     

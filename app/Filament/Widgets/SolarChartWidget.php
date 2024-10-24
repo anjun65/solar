@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 class SolarChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'Daya';
+    protected static ?string $heading = 'Daya (W)';
     protected int | string | array $columnSpan = 2;
     
     protected function getData(): array
