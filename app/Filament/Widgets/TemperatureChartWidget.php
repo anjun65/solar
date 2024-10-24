@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 class TemperatureChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'Suhu';
+    protected static ?string $heading = 'Suhu (C)';
     protected int | string | array $columnSpan = 2;
     
     protected function getData(): array

@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 class VoltageChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'tegangan';
+    protected static ?string $heading = 'Tegangan (V)';
     protected int | string | array $columnSpan = 2;
     
     protected function getData(): array
