@@ -21,7 +21,7 @@ class SolarChartWidget extends ChartWidget
                     end: now()->endOfDay(),
                 )
                 ->perMinute()
-                ->average('arus');
+                ->average('power');
  
         return [
             'datasets' => [
