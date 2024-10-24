@@ -18,8 +18,8 @@ class SolarChartWidget extends ChartWidget
     {
         $data = Trend::model(Solar::class)
                 ->between(
-                    start: now()->startOfDay(),
-                    end: now()->endOfDay(),
+                    start: now()->subHour(),
+                    end: now(),
                 )
                 ->perMinute()
                 ->average('power');
