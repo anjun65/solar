@@ -2,15 +2,16 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Solar;
 use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
+use App\Models\Solar;
 use Illuminate\Support\Carbon;
 
-class SolarChartWidget extends ChartWidget
+class CurrentChartWidget extends ChartWidget
 {
-    protected static ?string $heading = 'Daya';
+    protected static ?string $heading = 'Arus';
+
     protected int | string | array $columnSpan = 2;
     
     protected function getData(): array
@@ -23,12 +24,12 @@ class SolarChartWidget extends ChartWidget
                     end: now($timezone),
                 )
                 ->perMinute()
-                ->average('power');
+                ->average('current');
  
         return [
             'datasets' => [
                 [
-                    'label' => 'Daya',
+                    'label' => 'Arus',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],
@@ -40,4 +41,5 @@ class SolarChartWidget extends ChartWidget
     {
         return 'line';
     }
+
 }
